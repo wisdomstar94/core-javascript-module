@@ -193,4 +193,24 @@ class CommonLibrary {
 
     return 'pc';
   }
+
+  /**
+   * @description url query string 값을 반환하는 함수입니다.
+   */
+  getUrlQueryStringValues() {
+    const obj = {};
+
+    // console.log('__getUrlQueryStringValues() 호출됨..!');
+    const urlSearchParams = new URLSearchParams(location.search)
+    for (const item of urlSearchParams) {
+      // console.log('item', item);
+      const param = item[0];
+      const value = item[1];
+      // console.log(`param = ${param}, value = ${value}`);
+
+      obj[param] = value;
+    }
+
+    return obj;
+  }
 }

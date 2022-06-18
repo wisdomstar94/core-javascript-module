@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>get-url-query-string-values-test-page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../../js/classes/common-library.class.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        const commonLibrary = new CommonLibrary();
+        const queryParams = commonLibrary.getUrlQueryStringValues();
+        console.log('queryParams', queryParams);
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>
+        get-url-query-string-values-test-page
+      </p>
+    </div>
+  </body>
+</html>
