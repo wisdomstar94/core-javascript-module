@@ -1,0 +1,26 @@
+.bell-icon {
+  display: inline-flex;
+  position: relative;
+
+  -webkit-animation: ring 2s .7s ease-in-out infinite;
+  -webkit-transform-origin: 50% 4px;
+  -moz-animation: ring 2s .7s ease-in-out infinite;
+  -moz-transform-origin: 50% 4px;
+  animation: ring 2s .7s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+
+@keyframes ring {
+  0% { -webkit-transform: rotateZ(0); }
+  1% { -webkit-transform: rotateZ(10deg); }
+  10% { -webkit-transform: rotateZ(-8deg); }
+  19% { -webkit-transform: rotateZ(8deg); }
+  28% { -webkit-transform: rotateZ(-6deg); }
+  37% { -webkit-transform: rotateZ(6deg); }
+  46% { -webkit-transform: rotateZ(-4deg); }
+  55% { -webkit-transform: rotateZ(4deg); }
+  64% { -webkit-transform: rotateZ(-2deg); }
+  73% { -webkit-transform: rotateZ(1deg); }
+  82% { -webkit-transform: rotateZ(-1deg); }
+  100% { -webkit-transform: rotateZ(0); }
+}

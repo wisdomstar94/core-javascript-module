@@ -1,0 +1,110 @@
+.select-box-style-aaa {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: #f7f7f7;
+  border-radius: 14px;
+  box-sizing: border-box;
+  font-size: 12px;
+  transition: 0.9s all;
+}
+.select-box-style-aaa[data-opend='true'] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: none;
+}
+.select-box-style-aaa .virtual-select-box {
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  outline: none;
+  border: 0;
+  overflow: hidden;
+  z-index: -99;
+}
+.select-box-style-aaa .select-display-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.select-box-style-aaa .select-display-box .selected-text {
+  display: inline-block;
+
+  overflow: hidden;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+  color: #333;
+}
+.select-box-style-aaa .select-display-box .selected-text.placeholder {
+  color: #999;
+}
+
+.select-box-style-aaa .bottom-arrow-icon-area {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.select-box-style-aaa .select-items-box {
+  width: 100%;
+  max-height: 0;
+  overflow-y: scroll;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  /* overflow: hidden; */
+  overflow-y: scroll;
+  transition: 0.3s all;
+}
+.select-box-style-aaa[data-opend='true'] .select-items-box {
+  max-height: 200px;
+}
+
+.select-box-style-aaa .select-items-box ul.select-item-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.select-box-style-aaa .select-items-box ul.select-item-list > li.item {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 20px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  cursor: pointer;
+}
+.select-box-style-aaa .select-items-box ul.select-item-list > li.item[data-selected='true'] {
+  background-color: #eee;
+}
+.select-box-style-aaa .select-items-box ul.select-item-list > li.item:hover {
+  background-color: #eee;
+}

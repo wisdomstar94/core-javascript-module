@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>mobile-floating-side-bar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="./mobile-floating-side-bar.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../js/classes/mobile-floating-side-bar.class.js"></script>
+    <script src="./mobile-floating-side-bar.js"></script>
+  </head>
+  <body>
+    <div class="mobile-floating-side-bar" id="mobile-floating-side-bar">
+      <div class="background hide" onclick="mobileFloatingSideBar.backgroundClick()"></div>
+      <div class="side-bar hide">
+        <!-- content 작성 -->
+      </div>
+    </div>
+
+
+
+    <button onclick="mobileFloatingSideBar.show()">사이드바 보기</button>
+  </body>
+</html>

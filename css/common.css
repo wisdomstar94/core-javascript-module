@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10pt;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* ul */
+ul.common-list {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+ul.common-list.justify-content-center {
+  justify-content: center;
+}
+ul.common-list.justify-content-flex-end {
+  justify-content: flex-end;
+}
+ul.common-list.align-items-center {
+  align-items: center;
+}
+ul.common-list.align-items-flex-end {
+  align-items: flex-end;
+}
+ul.common-list.align-items-stretch {
+  align-items: stretch;
+}
+
+/* ul > li */
+ul.common-list > li.item {
+  display: inline-flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+ul.common-list.default-margin-right-5 > li.item {
+  margin-right: 5px;
+}
+ul.common-list.default-margin-right-10 > li.item {
+  margin-right: 10px;
+}
+ul.common-list.default-margin-right-15 > li.item {
+  margin-right: 15px;
+}
+ul.common-list.default-margin-right-20 > li.item {
+  margin-right: 20px;
+}
+ul.common-list.default-margin-bottom-5 > li.item {
+  margin-bottom: 5px;
+}
+ul.common-list.default-margin-bottom-10 > li.item {
+  margin-bottom: 10px;
+}
+ul.common-list.default-margin-bottom-15 > li.item {
+  margin-bottom: 15px;
+}
+ul.common-list.default-margin-bottom-20 > li.item {
+  margin-bottom: 20px;
+}
+ul.common-list > li.item.justify-content-center {
+  justify-content: center;
+}
+ul.common-list > li.item.justify-content-flex-end {
+  justify-content: flex-end;
+}
+ul.common-list > li.item.align-items-center {
+  align-items: center;
+}
+ul.common-list > li.item.align-items-flex-end {
+  align-items: flex-end;
+}
+ul.common-list > li.item.align-items-stretch {
+  align-items: stretch;
+}
+
+/* ul vertical mode */
+ul.common-list.vertical {
+  width: 100%;
+}
+ul.common-list.vertical > li.item {
+  width: 100%;
+}
+
+/* ul horizontal mode */
+ul.common-list.horizontal {
+  width: 100%;
+}
+ul.common-list.horizontal > li.item {
+  width: auto;
+}

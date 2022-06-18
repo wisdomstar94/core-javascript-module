@@ -1,0 +1,29 @@
+.common-accordion-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.common-accordion-box .always-show-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.common-accordion-box .hide-content {
+  width: 100%;
+  display: flex;
+  /* height: auto; */
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  transition: 0.3s ease-out;
+  background-color: #f00;
+}
+.common-accordion-box.show .hide-content {
+  height: auto;
+}

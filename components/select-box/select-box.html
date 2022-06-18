@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>select-box</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../../css/common.css" rel="stylesheet" type="text/css" />
+    <link href="./select-box.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../js/classes/select-box/select-box-style-aaa.class.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="./select-box.js"></script>
+  </head>
+  <body>
+    <ul class="common-list horizontal default-margin-right-10 default-margin-bottom-10">
+
+      <li class="item" data-title="select-box-style-aaa" style="width: 200px;">
+        <div class="select-box-style-aaa" id="select-box-1" data-opend="false" data-current-selected-value="002">
+          <input class="virtual-select-box" readonly type="text" />
+          <div class="bottom-arrow-icon-area">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 6.83">
+              <defs>
+                <style>
+                  .d {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                </style>
+              </defs>
+              <g id="a"/>
+              <g id="b">
+                <g id="c">
+                  <polyline class="d" points=".5 .5 5.5 6.33 10.5 .5"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="select-display-box">
+            <div class="selected-text"></div>
+          </div>
+          <div class="select-items-box">
+            <ul class="select-item-list">
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="item">
+        <button onclick="selectBoxStyleAAAValueCheck()">값 확인</button>
+      </li>
+
+    </ul>
+  </body>
+</html>

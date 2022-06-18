@@ -1,0 +1,9 @@
+.box {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 20px;
+  padding: 0;
+  position: relative;
+  border: 1px solid #ccc;
+}

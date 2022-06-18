@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>swiper-custom</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../../css/swiper-bundle.min.css" rel="stylesheet" type="text/css" >
+    <link href="../../css/common.css" rel="stylesheet" type="text/css" />
+    <link href="./swiper-custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/classes/swiper-custom.class.js"></script>
+    <script src="./swiper-custom.js"></script>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper-custom" id="swiper-custom">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
+      
+      <div class="swiper-prev-sliding-button" onclick="swiperCustom.sliding('prev')">
+
+      </div>
+      <div class="swiper-next-sliding-button" onclick="swiperCustom.sliding('next')">
+
+      </div>
+
+      <!-- horizontal 인 경우 -->
+      <div class="swiper-pagination-box">
+        <ul class="swiper-pagination-item-list">
+          <li class="item"></li>
+        </ul>
+      </div>
+
+      <!-- vertical 인 경우 -->
+      <!-- <div class="swiper-pagination-box vertical">
+        <ul class="swiper-pagination-item-list">
+          <li class="item"></li>
+        </ul>
+      </div> -->
+    </div>
+
+
+    <br />
+
+
+    <div class="swiper-custom" id="swiper-custom2">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
+      
+      <!-- <div class="swiper-prev-sliding-button" onclick="swiperCustom2.sliding('prev')">
+
+      </div>
+      <div class="swiper-next-sliding-button" onclick="swiperCustom2.sliding('next')">
+
+      </div> -->
+
+      <!-- horizontal 인 경우 -->
+      <!-- <div class="swiper-pagination-box">
+        <ul class="swiper-pagination-item-list">
+          <li class="item"></li>
+        </ul>
+      </div> -->
+
+      <!-- vertical 인 경우 -->
+      <div class="swiper-pagination-box vertical">
+        <ul class="swiper-pagination-item-list">
+          <li class="item"></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

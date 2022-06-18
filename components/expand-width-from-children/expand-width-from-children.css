@@ -1,0 +1,6 @@
+.horizontal-scroll-area {
+  width: 100%;
+  overflow-x: scroll;
+  padding: 20px;
+  box-sizing: border-box;
+}
