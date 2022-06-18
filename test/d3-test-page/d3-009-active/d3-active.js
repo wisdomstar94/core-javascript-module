@@ -1,7 +1,7 @@
 // https://github.com/d3/d3-transition#active
 
 window.addEventListener('load', function() {
-  const n = 4002;
+  const n = 10;
 
   const whiteblue = d3.interpolateRgb("#eee", "steelblue");
   const blueorange = d3.interpolateRgb("steelblue", "orange");
@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
       })
       .ease(d3.easeLinear)
       .on("start", function repeat() {
-        console.log('onStart');
+        console.log('repeat');
         d3.active(this)
             .styleTween("background-color", function() { return whiteblue; })
           .transition()
