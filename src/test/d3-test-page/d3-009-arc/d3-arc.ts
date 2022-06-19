@@ -1,5 +1,8 @@
 import * as d3 from 'd3';
 
+// https://www.geeksforgeeks.org/d3-js-arc-function/
+// https://stackoverflow.com/questions/57764969/using-a-function-in-d3-arc-attributes
+
 window.addEventListener('load', function() {
   const svgD3Instance = d3.select('svg').append("g");
 
