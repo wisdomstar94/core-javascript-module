@@ -1,0 +1,32 @@
+{
+  "name": "core-javascript-module",
+  "version": "1.0.0",
+  "description": "javascript 관련 프로젝트 입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisdomstar94/core-javascript-module.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "자바스크립트",
+    "타입스크립트"
+  ],
+  "author": "wisdomstar94@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wisdomstar94/core-javascript-module/issues"
+  },
+  "homepage": "https://github.com/wisdomstar94/core-javascript-module#readme",
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "esbuild": "^0.14.46"
+  },
+  "dependencies": {
+    "d3": "^7.4.4"
+  }
+}
