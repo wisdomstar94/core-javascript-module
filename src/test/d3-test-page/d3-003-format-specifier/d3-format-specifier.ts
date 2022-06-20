@@ -67,15 +67,15 @@ window.addEventListener('load', function() {
 
   const formatSpecifier = new d3.FormatSpecifier({
     align: '^',  
-    comma: 'true', // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. false 로 지정하고 싶으면 undefined, true 로 지정하고 싶으면 아무 문자열 이기만 하면 됨..
+    comma: true as any, // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. 그래서 불가피하게 as any 를 붙임..
     fill: '',
     precision: '5',
     sign: '-',
     symbol: '#',
-    trim: 'true', // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. false 로 지정하고 싶으면 undefined, true 로 지정하고 싶으면 아무 문자열 이기만 하면 됨..
+    trim: true as any, // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. 그래서 불가피하게 as any 를 붙임..
     type: 'd',
     width: '8',
-    zero: 'true', // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. false 로 지정하고 싶으면 undefined, true 로 지정하고 싶으면 아무 문자열 이기만 하면 됨..
+    zero: true as any, // 원래 boolean 인데.. 왜 string 으로 type 지정이 되어 있는지 모르겠음.. 그래서 불가피하게 as any 를 붙임..
   });
   console.log('formatSpecifier', formatSpecifier);
 
