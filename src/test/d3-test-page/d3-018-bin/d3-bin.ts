@@ -5,6 +5,8 @@ interface ValueItem {
   data: number;
 }
 
+// https://observablehq.com/@d3/d3-bin 
+
 window.addEventListener('load', function() {
   /*
     d3.bin 함수는 데이터를 범위별로 그룹핑 지어주는 역할을 한다.
