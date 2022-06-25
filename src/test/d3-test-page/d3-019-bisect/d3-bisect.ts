@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 window.addEventListener('load', function() {
   /*
     d3.bisect 함수는 숫자로 이루어진 배열에서
-    인자로 받은 숫자가 들어가기 좋은 인덱스를 계산하여 반환해준다.
+    인자로 받은 숫자와 가장 가까운 숫자가 위치한 인덱스를 계산하여 반환해준다.
   */
 
   const cents = d3.ticks(0, 5, 100);
