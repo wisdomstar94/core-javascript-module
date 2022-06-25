@@ -1,0 +1,17 @@
+body {
+  max-width: 960px;
+  margin: 1px;
+}
+
+div {
+  width: 10px;
+  height: 10px;
+  margin: 1px 0 0 1px;
+  display: inline-flex;
+  background: #eee;
+  display: inline-block;
+}
+
+svg {
+  border: 1px solid #ccc;
+}
