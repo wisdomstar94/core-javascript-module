@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 
 // https://runebook.dev/en/docs/d3/d3-brush
 // https://www.geeksforgeeks.org/d3-js-brush-function/
+// https://observablehq.com/@d3/brush-transitions
 
 window.addEventListener('load', async() => {
   /*
@@ -12,15 +13,34 @@ window.addEventListener('load', async() => {
 
     d3.brush().extend() : 브러쉬 할 수 있는 영역을 제한함.
     d3.brush().on("brush") : 브러쉬 될 때 마다 호출되는 콜백함수.
+    d3.move : 브러쉬 영역을 특정 영역으로 이동시킴.
   */
+
+  const brushed = function(selection: any) {
+    console.log('brushed.selection', selection);
+  };
+
+  const brushended = function({sourceEvent, selection}) {
+    console.log('brushended.sourceEvent', sourceEvent);
+    console.log('brushended.selection', selection);
+    if (!sourceEvent) return;
+    d3.select(this).transition()
+      .delay(100)
+      .duration(selection ? 750 : 0)
+      .call(brush.move, [[60, 60], [70, 70]]);
+  };
+
+  const brush = d3.brush()
+    .on("start brush", ({selection}) => brushed(selection))
+    .on("end", brushended)
+    .extent([[50, 50], [200, 200]])
+  ;
 
   d3
     .select('svg')
     .append("g")
     .attr("class", "brush")
-    .call(d3.brush().on("brush", (e) => {
-      console.log('e', e);
-    }))
-    .call(d3.brush().extent([[0, 0], [100, 100]]));
+    .call(brush)
+  ;
 });
 
