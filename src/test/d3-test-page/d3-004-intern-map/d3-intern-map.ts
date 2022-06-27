@@ -16,11 +16,32 @@ window.addEventListener('load', function() {
   console.log('d3Map', d3Map);
   d3Map.set('key1', 'val1');
   d3Map.set('key2', 2);
+  d3Map.set(new Date(2022, 4, 1), 'date wow!');
+  d3Map.set(['1', '2', '3'], 'array wow!');
+  d3Map.set({ a: 'a' }, 'a wow!');
   console.log('d3Map', d3Map);
 
   d3Map.forEach((value, key) => {
-    console.log(key, value);
+    console.log('key', key);
+    console.log('value', value);
   });
 
   console.log(`d3Map.get('key2')`, d3Map.get('key2'));
+  console.log(`d3Map.get(new Date(2022, 4, 1))`, d3Map.get(new Date(2022, 4, 1)));
+  console.log(`d3Map.get(['1', '2', '3'])`, d3Map.get(['1', '2', '3']));
+  console.log(`d3Map.get({ a: 'a' })`, d3Map.get({ a: 'a' }));
+
+
+  console.log(`==============================`);
+
+  const jsMap = new Map();
+  jsMap.set(new Date(2022, 7, 1), 'jsMap Data!');
+  console.log(`jsMap.get(new Date(2022, 7, 1))`, jsMap.get(new Date(2022, 7, 1)));
+
+  console.log(`==============================`);
+
+  const d3InternMap = new d3.InternMap();
+  d3InternMap.set(new Date(2022, 7, 1), 'd3InternMap Data!');
+  console.log(`d3InternMap.get(new Date(2022, 7, 1))`, d3InternMap.get(new Date(2022, 7, 1)));
+
 });
