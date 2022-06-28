@@ -6,10 +6,10 @@ import * as d3 from 'd3';
 
 window.addEventListener('load', async() => {
   var data = [
-    [8010, 16145, 8090, 8045],
-    [1013, 990, 940, 6907],
-    [11975, 5871, 8916, 2868],
-    [1951, 10048, 2060, 6171],
+    [10, 20, 30, 40],
+    [15, 25, 35, 45],
+    [20, 30, 40, 50],
+    [25, 35, 45, 55],
   ];
 
   const svg = d3.select('svg')
@@ -27,24 +27,32 @@ window.addEventListener('load', async() => {
     (data)
   ;
 
+  console.log('chord', chord);
+
   svg
     .datum(chord)
     .append("g")
     .selectAll("g")
-    .data(function (d) { return d.groups; })
+    .data(function (d) { 
+      console.log('one.data.d.groups', d.groups);
+      return d.groups; 
+    })
     .enter()
     .append("g")
     .append("path")
     .style("fill", "black")
     .style("stroke", "black")
-    .attr("d", d3.arc().innerRadius(150).outerRadius(160) as any) 
+    .attr("d", d3.arc().innerRadius(140).outerRadius(160) as any) 
   ;
 
   svg
     .datum(chord)
     .append("g")
     .selectAll("path")
-    .data(function (d) { return d; })
+    .data(function (d) { 
+      console.log('two.data.d', d);
+      return d; 
+    })
     .enter()
     .append("path")
     .attr("d", d3.ribbon().radius(150) as any)
