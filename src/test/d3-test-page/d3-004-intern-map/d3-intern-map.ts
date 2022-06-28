@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 
 // https://github.com/d3/d3-array/blob/v3.1.5/README.md#InternMap
 // https://observablehq.com/d/d4c5f6ad343866b9
+// https://github.com/mbostock/internmap
 
 window.addEventListener('load', function() {
   const w = 400;
@@ -44,4 +45,14 @@ window.addEventListener('load', function() {
   d3InternMap.set(new Date(2022, 7, 1), 'd3InternMap Data!');
   console.log(`d3InternMap.get(new Date(2022, 7, 1))`, d3InternMap.get(new Date(2022, 7, 1)));
 
+  {
+    // console.log(`==============================`);
+
+    // const d3InternMap3 = new d3.InternMap([
+    //   [{a: 1}, 'hi'],
+    //   [{a: 1}, 'zzzzz'],
+    //   [{a: 3}, 'nnnnn'],
+    // ], JSON.stringify);
+    // console.log(`d3InternMap3`, d3InternMap3);
+  }
 });

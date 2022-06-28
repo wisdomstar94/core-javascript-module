@@ -1,5 +1,7 @@
 // https://github.com/d3/d3-array/blob/main/README.md#InternSet
 
+import * as d3 from 'd3';
+
 window.addEventListener('load', function() {
   const w = 400;
   // const h = (w * 9) / 16;
@@ -24,4 +26,20 @@ window.addEventListener('load', function() {
   pocket.forEach((value) => {
     console.log('value', value);
   });
+
+  console.log(`==============================`);
+
+  const jsSet = new Set();
+  jsSet.add(new Date(2021, 4, 1));
+  jsSet.add(new Date(2022, 3, 8));
+  jsSet.add(new Date(2022, 3, 8));
+  console.log(`jsSet`, jsSet);
+
+  console.log(`==============================`);
+
+  const d3InternSet = new d3.InternSet();
+  d3InternSet.add(new Date(2021, 4, 1));
+  d3InternSet.add(new Date(2022, 3, 8));
+  d3InternSet.add(new Date(2022, 3, 8));
+  console.log(`d3InternSet`, d3InternSet);
 });
