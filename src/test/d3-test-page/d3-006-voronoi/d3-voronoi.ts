@@ -1,14 +1,32 @@
 import * as d3 from 'd3';
 
+export declare namespace ID3VOronoi {
+  export interface PointData {
+    x: number;
+    y: number;
+  }
+}
+
 window.addEventListener('load', function() {
+  // canvas 의 크기입니다.
   const w = 400;
-  // const h = (w * 9) / 16;
   const h = 400;
+
+  // canvas element 를 생성합니다.
   const canvas = document.createElement('canvas'); 
+
+  // canvas context 를 가져옵니다.
+  const context = canvas.getContext('2d');
+  if (context === null) {
+    return;
+  }
+
+  // canvas의 너비, 높이를 지정합니다.
   canvas.width = w;
   canvas.height = h;
 
-  const pointsData = [
+  // canvas 에 표시될 좌표 데이터 입니다.  
+  const pointsData: ID3VOronoi.PointData[] = [
     { x: 14, y: 23 }, 
     { x: 100, y: 100 }, 
     { x: 30, y: 250 },
@@ -20,13 +38,8 @@ window.addEventListener('load', function() {
     { x: 400, y: 380 },
   ];
 
-
-  // d3-delaunay 의 다른 적용 방식임. d3-delaunay 을 참조할 것.
-  console.log('d3.Voronoi', d3.Voronoi);
-  // const voronoi = new (d3.Voronoi as any)();
-
-  // d3-Voronoi 는 contructor 에 인자를 넘겨야 하는데, 왜인지 모르지만 @type 에는 인자가 정의되어 있지 않음.. 그래서 우선 as any 를 붙임..
-  const voronoi = new (d3.Voronoi as any)(
+  // d3.Voronoi 는 d3-delaunay 의 다른 적용 방식입니다. d3-delaunay 을 참조하세요.
+  const voronoi: d3.Voronoi<ID3VOronoi.PointData> = new (d3.Voronoi as any)( // 원래 d3.Voronoi 의 constructor 에 인자가 필요하나 이상하게 type 에는 정의가 되어 있지 않아 ts 에서 에러가 발생하여 as any 를 붙여주었습니다.
     d3.Delaunay.from(
       pointsData, 
       (d) => {
@@ -37,9 +50,21 @@ window.addEventListener('load', function() {
         // y 좌표에 해당하는 값 리턴
         return d.y;
       },
-    ), 
-    [0, 0, 400, 400],
+    ),
+    [0, 0, 400, 400]
   );
-  console.log('voronoi', voronoi);
+
+  console.log('voronoi.render()', voronoi.render());
+
+  const pathInfo = voronoi.render();
+  for (const path of pathInfo.split('M').slice(1)) {
+    context.beginPath();
+    context.strokeStyle = d3.hsl(360 * Math.random(), 0.7, 0.5).toString(); // 선 색상은 랜덤
+    context.stroke(new Path2D('M' + path));
+    context.closePath();
+  }
+
+  canvas.style.border = '1px solid #ccc';
+  document.querySelector('body')?.appendChild(canvas);
 });
 
