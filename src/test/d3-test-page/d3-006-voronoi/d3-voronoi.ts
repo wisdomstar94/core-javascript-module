@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
     { x: 400, y: 380 },
   ];
 
-  // d3.Voronoi 는 d3-delaunay 의 다른 적용 방식입니다. d3-delaunay 을 참조하세요.
+  // d3.Voronoi 는 d3.Delaunay 의 voronoi 함수를 사용하는 방식의 다른 적용 방식입니다. d3-delaunay 을 참조하세요.
   const voronoi: d3.Voronoi<ID3VOronoi.PointData> = new (d3.Voronoi as any)( // 원래 d3.Voronoi 의 constructor 에 인자가 필요하나 이상하게 type 에는 정의가 되어 있지 않아 ts 에서 에러가 발생하여 as any 를 붙여주었습니다.
     d3.Delaunay.from(
       pointsData, 
