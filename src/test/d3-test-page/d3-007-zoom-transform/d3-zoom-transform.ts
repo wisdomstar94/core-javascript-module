@@ -4,7 +4,6 @@ import * as d3 from 'd3';
 
 window.addEventListener('load', function() {
   const w = 400;
-  // const h = (w * 9) / 16;
   const h = 400;
   const canvas = document.createElement('canvas'); 
   const context = canvas.getContext('2d');
