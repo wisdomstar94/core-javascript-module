@@ -1,10 +1,6 @@
 import * as d3 from 'd3';
 
-// https://github.com/d3/d3-chord
 // https://observablehq.com/@d3/directed-chord-diagram
-// https://www.geeksforgeeks.org/d3-js-chord-function/
-// https://www.intothevoid.io/data-visualization/understanding-d3-data-vs-datum/
-// https://www.geeksforgeeks.org/d3-js-ribbon-function/
 
 window.addEventListener('load', async() => {
   const data = [
@@ -22,7 +18,7 @@ window.addEventListener('load', async() => {
     .attr("transform", "translate(150,150)")
   ;
 
-  const chord = d3.chord()
+  const chord = d3.chordDirected()
     .padAngle(0.5)
     .sortGroups(d3.ascending)
     .sortSubgroups(d3.ascending)
