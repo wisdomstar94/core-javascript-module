@@ -40,6 +40,9 @@ window.addEventListener('load', async() => {
     [ d3.chord 이란? ]
     - 데이터를 기반으로 원형 레이아웃을 그리도록 좌표 값 정보를 반환해주는 역할을 합니다.
     - 주로 d3.arc 와 d3.ribbon 과 같이 사용됩니다.
+
+    [ d3.chordDirected ]
+    - d3.chordDirected 로 반환된 source, target 데이터는 value 가 자기 자신에서 자기 자신으로 향합니다.
   */
 
   // 바깥에 arc 를 그리는 코드

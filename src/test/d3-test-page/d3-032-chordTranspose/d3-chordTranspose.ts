@@ -1,11 +1,5 @@
 import * as d3 from 'd3';
 
-// https://github.com/d3/d3-chord
-// https://observablehq.com/@d3/directed-chord-diagram
-// https://www.geeksforgeeks.org/d3-js-chord-function/
-// https://www.intothevoid.io/data-visualization/understanding-d3-data-vs-datum/
-// https://www.geeksforgeeks.org/d3-js-ribbon-function/
-
 window.addEventListener('load', async() => {
   const data = [
     [10, 15, 20, 25, 30],
@@ -22,7 +16,7 @@ window.addEventListener('load', async() => {
     .attr("transform", "translate(150,150)")
   ;
 
-  const chord = d3.chord()
+  const chord = d3.chordTranspose()
     .padAngle(0.5)
     .sortGroups(d3.ascending)
     .sortSubgroups(d3.ascending)
@@ -44,6 +38,8 @@ window.addEventListener('load', async() => {
     [ d3.chord 이란? ]
     - 데이터를 기반으로 원형 레이아웃을 그리도록 좌표 값 정보를 반환해주는 역할을 합니다.
     - 주로 d3.arc 와 d3.ribbon 과 같이 사용됩니다.
+
+    [ d3.chordTranspose ]
     - d3.chord 로 arc 또는 ribbon 을 그리게되면 레이아웃 크기가 점점 작아지게 되지만,
       d3.chordTranspose 로 arc 또는 robbon 을 그리게되면 레이아웃 크기가 균등합니다.
   */
