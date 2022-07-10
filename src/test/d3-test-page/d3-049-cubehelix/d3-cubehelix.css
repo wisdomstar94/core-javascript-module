@@ -1,0 +1,18 @@
+body {
+  max-width: 960px;
+  margin: 1px;
+}
+
+div {
+  background: #eee;
+}
+
+svg {
+  border: 1px solid #ccc;
+}
+
+g text.text {
+  inline-size: 50px;
+  writing-mode: horizontal-tb; 
+  word-wrap: break-word;
+}
