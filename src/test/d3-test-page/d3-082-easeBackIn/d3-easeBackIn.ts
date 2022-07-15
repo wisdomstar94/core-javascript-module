@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 window.addEventListener('load', async() => {  
   /*
-    d3.easeBack 는 transition 의 ease 종류중 하나입니다.
+    d3.easeBackIn 는 transition 의 ease 종류중 하나입니다.
   */
 
   const svg = d3.select('svg');

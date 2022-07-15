@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 window.addEventListener('load', async() => {  
   /*
-    d3.easeBounce 는 transition 의 ease 종류중 하나입니다.
+    d3.easeBounceInOut 는 transition 의 ease 종류중 하나입니다.
   */
 
   const svg = d3.select('svg');
@@ -17,7 +17,7 @@ window.addEventListener('load', async() => {
     .attr('cy', 20)
     .attr('style', 'fill: #f00')
     .transition()
-    .ease(d3.easeBounce)
+    .ease(d3.easeBounceInOut)
     .duration(1000)
     .attr('cx', 100)
   ;
