@@ -17,6 +17,6 @@ window.addEventListener('load', async() => {
   ];
   console.log('data', data);
 
-  const flatGroup = d3.flatGroup(data, d => d.name, d => 'zzzz', d => d.age, ); // (data[0] 요소인 경우) => [ d.name, 'zzzz', d.age, [{ name: 'name1', age: 11, }] ] 으로 반환됨.
+  const flatGroup = d3.flatGroup(data, d => d.name, d => 'zzzz', d => d.age, ); // (data[0] 요소인 경우) => [ 'name1', 'zzzz', 11, [{ name: 'name1', age: 11, }] ] 으로 반환됨.
   console.log(`flatGroup`, flatGroup);
 });
