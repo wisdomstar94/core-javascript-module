@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 
-// 
+// https://devdocs.io/d3~7/d3-array#filter
+
 window.addEventListener('load', async() => {  
   /*
     d3.filter 는 주어진 테스트 함수가 true를 반환하는 iterable의 값을 순서대로 포함하는 새 배열을 반환합니다. 
