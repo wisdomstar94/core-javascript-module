@@ -14,5 +14,5 @@ window.addEventListener('load', async() => {
   const locale = await d3.json("https://cdn.jsdelivr.net/npm/d3-format@3/locale/ko-KR.json") as d3.FormatLocaleDefinition;
   d3.formatDefaultLocale(locale);
 
-  console.log(`d3.format("$,")(1234.56)`, d3.format("$,")(1234.56)); // 1 234,56 руб.
+  console.log(`d3.format("$,")(1234.56)`, d3.format("$,")(1234.56)); 
 });
