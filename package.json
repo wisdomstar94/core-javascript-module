@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/wisdomstar94/core-javascript-module#readme",
   "devDependencies": {
+    "@types/animejs": "^3.1.5",
     "@types/d3": "^7.4.0",
     "@types/three": "^0.143.0",
     "esbuild": "^0.14.53"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
     "d3": "^7.6.1",
     "konva": "^8.3.11",
     "three": "^0.143.0"
