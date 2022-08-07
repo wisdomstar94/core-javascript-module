@@ -1,15 +1,10 @@
 import * as THREE from 'three';
-import { CinematicCamera } from 'three/examples/jsm/cameras/CinematicCamera.js';
 
 window.addEventListener('load', () => {
-	const camera = new CinematicCamera( 
-		60, // 카메라 절두체 수직 시야각(도 단위).
-		window.innerWidth / window.innerHeight, // 카메라 절두체 종횡비, 창 너비를 창 높이로 나눈 값입니다.
-		1, // 비행기 근처의 카메라 절두체.
-		0, // 카메라 절두체 원거리 평면.
-	);
+	// https://webdoli.tistory.com/51
+	const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 	camera.setFocalLength( 10 );
-	camera.position.set( -50, 50, 50 );
+	camera.position.set( 50, 50, 50 );
 	camera.lookAt(0, 0, 0);
 
 	const scene = new THREE.Scene();
@@ -21,6 +16,9 @@ window.addEventListener('load', () => {
 	light.position.set( 1, 1, 1 ).normalize();
 	scene.add( light );
 
+	const axesHelper = new THREE.AxesHelper( 500 );
+	scene.add( axesHelper );
+
 	const geometry = new THREE.BoxGeometry( 20, 20, 20 );
 	const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
   const cube = new THREE.Mesh( geometry, material );
@@ -28,73 +26,36 @@ window.addEventListener('load', () => {
 	const cubeX = 0;
 	const cubeY = 0;
 	const cubeZ = 0;
+
+	cube.position.x = cubeX;
+	cube.position.y = cubeY;
+	cube.position.z = cubeZ;
+
 	const cubeToCameraLength = 50;
 
 	const renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild( renderer.domElement );
 
-
-	
-
-	let isXPlus = true;
-	let isYPlus = false;
+	let default_value = 0;
 	function animate() {
     requestAnimationFrame( animate );
 
-    // cube.rotation.x += 0.01;
-    // cube.rotation.y += 0.01;
-		let nextX = camera.position.x;
-		if (isXPlus) {
-			nextX += 1;
-		} else {
-			nextX -= 1;
-		}
+		console.log(`camera.position`, camera.position);
 
-		let nextZ = Math.sqrt(cubeToCameraLength ** 2 - (nextX ** 2));
-		if (isNaN(nextZ)) {
-			// console.log('..');
-			if (nextX > cubeX) {
-				isXPlus = false;
-				nextX = cubeX + cubeToCameraLength;
-				nextZ = Math.sqrt(cubeToCameraLength ** 2 - (nextX ** 2));
-			} else {
-				isXPlus = true;
-				nextX = cubeX - cubeToCameraLength;
-				nextZ = Math.sqrt(cubeToCameraLength ** 2 - (nextX ** 2));
-			}
-		}
+		camera.position.x = Math.sin(default_value) * cubeToCameraLength;
+		camera.position.z = Math.cos(default_value) * cubeToCameraLength;
+		camera.lookAt(new THREE.Vector3(0,0,0));
 
-		console.log(`nextX: ${nextX}, nextZ: ${-nextZ}`);
-
-		// if (isXPlus) {
-		// 	nextX += 1;
-		// } else {
-		// 	nextX -= 1;
-		// }
-
-		// if (nextX > 50) {
-		// 	isXPlus = false;
-		// 	nextX = 50;
-		// } else if (nextX < -50) {
-		// 	isXPlus = true;
-		// 	nextX = -50;
-		// }
-
-		camera.position.set( 
-			nextX,
-			camera.position.y,
-			isXPlus ? -nextZ : nextZ,
-		);
-		camera.lookAt(0, 0, 0);
-		// camera.position.set( 
-		// 	camera.position.x + 0.1,
-		// 	Math.sqrt(2500 - ((camera.position.x + 0.1) ** 2)),
-		// 	camera.position.z,
-		// );
+		default_value += 0.01;
 
     renderer.render( scene, camera );
   };
+
+	function getAngle(x1: number, y1: number, x2: number, y2: number) {
+    const rad = Math.atan2(y2 - y1, x2 - x1);
+    return (rad * 180) / Math.PI ;
+	}
 
   animate();
 });
