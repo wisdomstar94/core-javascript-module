@@ -44,7 +44,7 @@ window.addEventListener('load', async() => {
 
 	// sphereBody.applyImpulse(new CANNON.Vec3(0, 0, 0), new CANNON.Vec3(0, 0, -50));
 	const force = new CANNON.Vec3(-500, 350, 0)
-	sphereBody.applyForce(force)
+	sphereBody.applyForce(force);
 
 
 
